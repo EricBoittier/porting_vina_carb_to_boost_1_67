@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/eric/Projects/porting_vina_carb_to_boost_1_67/autodock_vina_1_1_2/src",
+                "/home/eric/Projects/porting_vina_carb_to_boost_1_67/autodock_vina_1_1_2/src/lib/glylib/inc/",
+                "/home/eric/Projects/porting_vina_carb_to_boost_1_67/autodock_vina_1_1_2/src/lib/"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

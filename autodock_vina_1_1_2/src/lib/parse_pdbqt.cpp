@@ -1373,6 +1373,8 @@ void parse_pdbqt_aux(std::istream& in, unsigned& count, parsing_struct& p, conte
 				ring_atoms[5]=O5;
 				ring1_conf=BFMP(ring_atoms);
 				sizet_ring1_conf[0]=ring1_conf;
+
+
 				C1[0].i=ligand_info[S2_C1[0]].coords[0];
 				C1[0].j=ligand_info[S2_C1[0]].coords[1];
 				C1[0].k=ligand_info[S2_C1[0]].coords[2];
@@ -1403,52 +1405,67 @@ void parse_pdbqt_aux(std::istream& in, unsigned& count, parsing_struct& p, conte
                                 ring_atoms[3]=C4;
                                 ring_atoms[4]=C5;
                                 ring_atoms[5]=O5;
+
 				ring2_conf=BFMP(ring_atoms);
 				sizet_ring2_conf[0]=ring2_conf;
+
+				VC_log<<"Ring conformation of "<<ligand_info[branch_atom1[h]-1].resname<<" "<<
+				ligand_info[branch_atom1[h]-1].resnum<<" = "<<sizet_ring1_conf[0]<<" and  "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<" = "<<sizet_ring2_conf[0]<<".\n";
+				
 				if(sizet_ring1_conf[0]==0)
 				{
 				VC_log<<"CHI energy penalties NOT applied to phi torsion in linkage b/w "<<ligand_info[branch_atom1[h]-1].resname<<" "<<ligand_info[branch_atom1[h]-1].resnum<<" and "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<".\n";
 				}
+
 				if(sizet_ring2_conf[0]==0)
 				{
 				VC_log<<"CHI energy penalties NOT applied to psi torsion in linkage b/w "<<ligand_info[branch_atom1[h]-1].resname<<" "<<ligand_info[branch_atom1[h]-1].resnum<<" and "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<".\n";
 				}
+
 				if(sizet_ring1_conf[0]==0 && sizet_ring2_conf[0]==0)
 				{
 				VC_log<<"CHI energy penalities NOT applied to glycosidic linkage b/w "<<ligand_info[branch_atom1[h]-1].resname<<" "<<ligand_info[branch_atom1[h]-1].resnum<<" and "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<".\n";
 				}
+
 				if(sizet_ring1_conf[0]!=0 && sizet_ring2_conf[0]!=0)
 				{
-				VC_log<<"CHI energy penalties applied to "<<ligand_info[branch_atom1[h]-1].resname<<" "<<ligand_info[branch_atom1[h]-1].resnum<<" and "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<" linkage.\n";
+				VC_log<<"CHI energy penalties APPLIED to "<<ligand_info[branch_atom1[h]-1].resname<<" "<<ligand_info[branch_atom1[h]-1].resnum<<" and "<<ligand_info[branch_atom2[h]-1].resname<<" "<<ligand_info[branch_atom2[h]-1].resnum<<" linkage.\n";
 				}
+
 				if( ((S1_AB_angle<-40) && (S1_AB_angle>-80)) || ((S1_AB_angle>40) && (S1_AB_angle<80)) )
 				{
 					//Phi_Alpha_L
 					S1_AB[0]=0;
 				}
+
 				else if( ((S1_AB_angle<-160) && (S1_AB_angle>-200)) || ((S1_AB_angle>160) && (S1_AB_angle<200)) )
 				{
                                         //Phi_Beta_D
 					S1_AB[0]=1;
 				}
+
 				if( (S2_AE_angle<120 && S2_AE_angle>80) )
 				{
 				//Axial attachment
 				S2_AE[0]=0;
 				}
+
 				else if(S2_AE_angle>130 && S2_AE_angle<170)
 				{
 				//Equatorial attachment
 				S2_AE[0]=1;
 				}
+
                                 if(S2_omega_angle>0)
                                         {
                                         S2_6AE[0]=1;
                                         }
+
                                 else if (S2_omega_angle<0)
                                         {
                                         S2_6AE[0]=0;
                                         }
+
 		//Co-ordinates START
 		glyco_info.push_back(S1_O5); //index 0
 		glyco_info.push_back(S1_C1); //index 1
@@ -1469,6 +1486,7 @@ void parse_pdbqt_aux(std::istream& in, unsigned& count, parsing_struct& p, conte
 
 		glyco_info.clear();
 		}//end of finding glycosidic
+
 	}//end of for for branch atom size
 }
 

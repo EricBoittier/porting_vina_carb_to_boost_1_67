@@ -6,7 +6,7 @@ INCFLAGS = -I $(BOOST_INCLUDE) -I ../../../src/lib/glylib/inc/
 
 # -pedantic fails on Mac with Boost 1.41 (syntax problems in their headers)
 #CC = ${GPP} ${C_PLATFORM} -ansi -pedantic -Wno-long-long ${C_OPTIONS} $(INCFLAGS)
-CC = ${GPP} ${C_PLATFORM} -ansi -Wno-long-long ${C_OPTIONS} $(INCFLAGS) 
+CC = nvcc --compiler-options="-g -fPIC ${C_PLATFORM} -ansi -Wno-long-long ${C_OPTIONS}" $(INCFLAGS) 
 
 LDFLAGS = -L ../../../src/lib/glylib/lib/ -L/home/eric/Desktop/boost_1_67_0/stage/lib -L.
 

@@ -1,0 +1,2 @@
+Ring conformation of NAG 902  = 0 and  GCD 901  = 1.
+CHI energy penalties NOT applied to phi torsion in linkage b/w NAG 902  and GCD 901 .

@@ -892,6 +892,15 @@ if(chi_coeff!=0){
 				}
 			}
 		}
+
+// Code for alpha 2S0 sugars PHI should go here
+// 
+// 
+// 
+// 
+
+
+
 		else
 		{//Beta
 			if(glyco_info[i][10][0]==1)
@@ -912,6 +921,14 @@ if(chi_coeff!=0){
 			}
 		}
 	}
+
+// Code for beta 2S0 sugars PHI should go here
+// 
+// 
+// 
+// 
+
+
 	if(glyco_info[i][11][0]!=0){
 	psi=get_torsion_coords_vecs_list(coords[glyco_info[i][1][0]],coords[glyco_info[i][2][0]],coords[glyco_info[i][3][0]],coords[glyco_info[i][4][0]]);
 	omega=get_torsion_coords_vecs_list(coords[glyco_info[i][2][0]],coords[glyco_info[i][3][0]],coords[glyco_info[i][4][0]],coords[glyco_info[i][9][0]]);
@@ -936,6 +953,18 @@ if(chi_coeff!=0){
 					}
 				}
 			}
+
+
+
+// Code for axial 2S0 sugars PSI should go here
+// 
+// 
+// 
+// 
+
+
+
+
 			else
 			{//Equatorial attachment
 				if(glyco_info[i][11][0]==2)
@@ -957,6 +986,14 @@ if(chi_coeff!=0){
 			
 			}
 		}
+
+// Code for equitorial 2S0 PSI sugars should go here
+// 
+// 
+// 
+// 
+
+
 		else if(glyco_info[i][7][0]==3)
 		{//3 linkage
 			if(glyco_info[i][6][0]==0)
