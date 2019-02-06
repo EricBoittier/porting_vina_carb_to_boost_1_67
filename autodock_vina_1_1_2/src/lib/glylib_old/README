@@ -1,0 +1,42 @@
+2014-09-11 BLFoley
+
+This is a library designed to facilitate programming relevant to 
+molecular data.
+
+Please see http://glycam.org/glylib for detailed documentation.
+
+Briefly:
+
+Requires:  
+
+    C compiler and/or C++ compiler
+    make utilities
+    GNU-compatible compilers are preferred
+
+To build:
+
+    cd lib
+    make  # to make for C and C++
+
+    - If you only want C:
+
+        make justC
+
+    - For only C++:
+
+        make justCpp
+
+To use:
+
+    You need to make your compile aware of the inc and lib directories 
+    and -lglylib or -lglylib++, depending on the compiler.  In most cases, 
+    you will also need -lm.
+
+For example:
+
+    gcc mycode.c -L/path/to/glylib/lib -I/path/to/glylib/inc -lglylib -Wall -lm
+      -or- 
+    g++ mycode.c -L/path/to/glylib/lib -I/path/to/glylib/inc -lglylib++ -Wall -lm
+
+For help: glycam@gmail.com
+
